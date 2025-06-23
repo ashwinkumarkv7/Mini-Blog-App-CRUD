@@ -6,16 +6,16 @@ const Post = require('./models/Post'); // your Mongoose model
 const app = express();
 const PORT = process.env.PORT || 5000;
 
-// Middlewares
+
 app.use(cors());
 app.use(express.json());
 
-// MongoDB Connection
+
 mongoose.connect('mongodb://127.0.0.1:27017/logapp')
   .then(() => console.log('✅ MongoDB connected successfully'))
   .catch((err) => console.error('❌ MongoDB connection failed:', err));
 
-// Routes
+
 
 // Get all posts
 app.get('/posts', async (req, res) => {
